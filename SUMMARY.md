@@ -5,6 +5,7 @@
 * [Introduction](README.md)
 * [Getting Started with the APIs](api-service-gateway-overview/getting-started-with-sparc-apis.md)
 * [Using your API key](api-service-gateway-overview/using-your-api-key.md)
+* [API Rate Limiting](api-service-gateway-overview/api-rate-limiting.md)
 * [API Service Gateway Responses](api-service-gateway-overview/api-service-gateway-responses.md)
 
 ## Elasticsearch Metadata Services
