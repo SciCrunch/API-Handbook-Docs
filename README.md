@@ -14,5 +14,3 @@ The APIs and associated services are provided by the FAIR Data Informatics Labor
 * InterLex Terminology
   * Search via Elasticsearch
 * Knowledge Graph Services (Coming Soon to the API Gateway)
-  * SPARC Knowledge Graph (via SciGraph)
-  * Simple SCKAN
