@@ -6,7 +6,7 @@ description: Introduction to searching the RIN indices
 
 ## Introduction
 
-The Resources Information Network (RIN) APIs are provided via an ElasticSearch endpoint.  &#x20;
+The Resources Information Network (RIN) APIs are provided via an ElasticSearch endpoint.   Simple URL based searches are available via the GET method.  More complex queries can be supplied via the POST method.
 
 ### Access to the RIN APIs
 

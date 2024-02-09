@@ -1,5 +1,18 @@
 # Basic RIN Search Examples
 
+## Simple URL based search
+
+```url
+https://api.scicrunch.io/elastic/v1/RIN_Tool_pr/_search?q=SPM
+```
+
+The above URL will search the SciCrunch registry for all resources that refer to SPM (a nuroimaging analysis tool). The CURL request for this search would be:
+
+```bash
+curl --location 'https://api.scicrunch.io/elastic/v1/RIN_Tool_pr/_search?q=SPM' \
+--header 'apikey: <<YOUR API KEY>>'
+```
+
 ## Search all resources
 
 This search looks for all resources of the current RIN index.
