@@ -18,7 +18,7 @@
   * [RIN Elaticsearch JSON Data Model](elasticsearch-metadata-services/resource-information-network-rin-services/rin-elaticsearch-json-data-model.md)
 * [SPARC Datasets](elasticsearch-metadata-services/sparc-datasets/README.md)
   * [Searching SPARC Dataset Indices](elasticsearch-metadata-services/sparc-datasets/searching-sparc-dataset-indices.md)
-  * [Basic SPARC Searche Examples](elasticsearch-metadata-services/sparc-datasets/map-core-competency-searches.md)
+  * [Basic SPARC Search Examples](elasticsearch-metadata-services/sparc-datasets/map-core-competency-searches.md)
   * [SPARC Dataset Elasticsearch JSON Data Model](elasticsearch-metadata-services/sparc-datasets/sparc-dataset-elasticsearch-json-data-model.md)
 
 ## Terminology Services
