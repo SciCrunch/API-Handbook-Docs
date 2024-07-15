@@ -26,3 +26,5 @@
 * [InterLex](terminology-services/interlex/README.md)
   * [Searching InterLex](terminology-services/interlex/untitled.md)
   * [Basic Interlex Search Example](terminology-services/interlex/basic-interlex-search-example.md)
+  * [Bulk Add](terminology-services/interlex/bulk-add.md)
+  * [Bulk Update](terminology-services/interlex/bulk-update.md)
