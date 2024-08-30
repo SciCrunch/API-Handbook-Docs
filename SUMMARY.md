@@ -16,6 +16,7 @@
   * [Searching RIN Indices](elasticsearch-metadata-services/resource-information-network-rin-services/searching-rin-indices.md)
   * [Basic RIN Search Examples](elasticsearch-metadata-services/resource-information-network-rin-services/basic-rin-search-examples.md)
   * [RIN Elaticsearch JSON Data Model](elasticsearch-metadata-services/resource-information-network-rin-services/rin-elaticsearch-json-data-model.md)
+  * [Download Larger Datasets](elasticsearch-metadata-services/resource-information-network-rin-services/download-larger-datasets.md)
 * [SPARC Datasets](elasticsearch-metadata-services/sparc-datasets/README.md)
   * [Searching SPARC Dataset Indices](elasticsearch-metadata-services/sparc-datasets/searching-sparc-dataset-indices.md)
   * [Basic SPARC Search Examples](elasticsearch-metadata-services/sparc-datasets/map-core-competency-searches.md)
