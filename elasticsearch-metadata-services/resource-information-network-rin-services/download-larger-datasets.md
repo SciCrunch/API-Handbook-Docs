@@ -1,14 +1,35 @@
 # Download Larger Datasets
 
+If you are new to our API service, we recommend starting with “[Getting Started with the APIs](https://app.gitbook.com/o/-MKC-C\_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/getting-started-with-sparc-apis)” and “[Using your API key](https://app.gitbook.com/o/-MKC-C\_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/using-your-api-key)” for helpful guidance first. If you have any questions, please do not hesitate to contact us.\
+\
 With a large number of records to download you would not be able to do that via a simple Elasticsearch search as Elasticsearch's paging limit is 10,000 records. Therefore, you need to use Elasticsearch's scroll mechanism. An example of such a curl request would be (Note: for normal queries you would not add the ?scroll=1s to the end):\
 \
+**Download an Entire Index**\
+\
+To download an entire index from the API, use the following curl command:
+
 `curl --location 'https://api.scicrunch.io/elastic/v1/<<YOUR<https://api.scicrunch.io/elastic/v1/%3C%3CYOUR> TARGET INDEX>>/_search?scroll=1s' \`\
 `--header 'Content-Type: application/json' \`\
 `--header 'apikey: <<YOUR API KEY>>' \`\
 `--data '{ <<YOUR QUERY HERE>> }'`\
+\
+Make sure to replace the placeholders:
+
+<\<YOUR TARGET INDEX>> with the index you're targeting.
+
+<\<YOUR API KEY>> with your API key.
+
+<\<YOUR QUERY HERE>> with the specific query you want to execute.
+
+For example queries, refer to the following link:[ Example Queries](https://app.gitbook.com/o/-MKC-C\_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/elasticsearch-metadata-services/resource-information-network-rin-services/basic-rin-search-examples).
+
+\
 
 
-Note: The above example would download an entire index.  To download specific content you would add a query component to the initial scroll request.
+**Download Specific Content**
+
+\
+To download specific content you would add a query component to the initial scroll request.
 
 \
 This would yield results:\
