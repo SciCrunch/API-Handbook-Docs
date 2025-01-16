@@ -1,10 +1,10 @@
 # Download Larger Datasets
 
-If you are new to our API service, we recommend starting with “[Getting Started with the APIs](https://app.gitbook.com/o/-MKC-C\_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/getting-started-with-sparc-apis)” and “[Using your API key](https://app.gitbook.com/o/-MKC-C\_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/using-your-api-key)” for helpful guidance first. If you have any questions, please do not hesitate to contact us.\
+If you are new to our API service, we recommend starting with “[Getting Started with the APIs](https://app.gitbook.com/o/-MKC-C_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/getting-started-with-sparc-apis)” and “[Using your API key](https://app.gitbook.com/o/-MKC-C_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/using-your-api-key)” for helpful guidance first. If you have any questions, please do not hesitate to contact us.\
 \
 With a large number of records to download you would not be able to do that via a simple Elasticsearch search as Elasticsearch's paging limit is 10,000 records. Therefore, you need to use Elasticsearch's scroll mechanism. An example of such a curl request would be (Note: for normal queries you would not add the ?scroll=1s to the end):\
 \
-**Download an Entire Index**\
+**Initialize Download an Entire Index**\
 \
 To download an entire index from the API, use the following curl command:
 
@@ -21,12 +21,12 @@ Make sure to replace the placeholders:
 
 <\<YOUR QUERY HERE>> with the specific query you want to execute.
 
-For example queries, refer to the following link:[ Example Queries](https://app.gitbook.com/o/-MKC-C\_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/elasticsearch-metadata-services/resource-information-network-rin-services/basic-rin-search-examples).
+For example queries, refer to the following link:[ Example Queries](basic-rin-search-examples.md).
 
 \
 
 
-**Download Specific Content**
+**Page Through Index and Download Content**
 
 \
 To download specific content you would add a query component to the initial scroll request.
