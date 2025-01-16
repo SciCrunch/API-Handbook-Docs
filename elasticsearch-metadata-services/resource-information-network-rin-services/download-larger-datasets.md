@@ -1,6 +1,6 @@
 # Download Larger Datasets
 
-If you are new to our API service, we recommend starting with “[Getting Started with the APIs](https://app.gitbook.com/o/-MKC-C_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/getting-started-with-sparc-apis)” and “[Using your API key](https://app.gitbook.com/o/-MKC-C_E8VrlFQpFKwue/s/IFPUklTpgWYMOYnZkrEP/api-service-gateway-overview/using-your-api-key)” for helpful guidance first. If you have any questions, please do not hesitate to contact us.\
+If you are new to our API service, we recommend starting with “[Getting Started with the APIs](../../api-service-gateway-overview/getting-started-with-sparc-apis.md)” and “[Using your API key](../../api-service-gateway-overview/using-your-api-key.md)” for helpful guidance first. If you have any questions, please do not hesitate to contact us.\
 \
 With a large number of records to download you would not be able to do that via a simple Elasticsearch search as Elasticsearch's paging limit is 10,000 records. Therefore, you need to use Elasticsearch's scroll mechanism. An example of such a curl request would be (Note: for normal queries you would not add the ?scroll=1s to the end):\
 \
