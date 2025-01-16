@@ -4,9 +4,9 @@ If you are new to our API service, we recommend starting with “[Getting Starte
 \
 With a large number of records to download you would not be able to do that via a simple Elasticsearch search as Elasticsearch's paging limit is 10,000 records. Therefore, you need to use Elasticsearch's scroll mechanism. An example of such a curl request would be (Note: for normal queries you would not add the ?scroll=1s to the end):\
 \
-**Initialize Download an Entire Index**\
+**Initialize Download of an Entire Index**\
 \
-To download an entire index from the API, use the following curl command:
+To download an entire index from the API, you start the scrolling process with the following curl command:
 
 `curl --location 'https://api.scicrunch.io/elastic/v1/<<YOUR<https://api.scicrunch.io/elastic/v1/%3C%3CYOUR> TARGET INDEX>>/_search?scroll=1s' \`\
 `--header 'Content-Type: application/json' \`\
@@ -29,10 +29,7 @@ For example queries, refer to the following link:[ Example Queries](basic-rin-se
 **Page Through Index and Download Content**
 
 \
-To download specific content you would add a query component to the initial scroll request.
-
-\
-This would yield results:\
+The initial scroll query would yield results such as:\
 `{`\
 `"_scroll_id": "DnF1ZXJ5VGhlbkZldGNoAgAAAAAF-0fRFkhYNzFBb1loU1dLbVpicWpmSTl3b1EAAAAABftH0hZIWDcxQW9ZaFNXS21aYnFqZkk5d29R",`\
 `"took": 19,`\
@@ -45,7 +42,7 @@ This would yield results:\
 `},`\
 `"hits": { ...`\
 \
-You would then use the scroll\_id for future request:\
+To download additional content you would need to download the next set of results.  To do this,  use the scroll\_id from the prior result and create a new request:\
 \
 `curl --location 'https://api.scicrunch.io/elastic/v1/_search/scroll' \`\
 `--header 'Content-Type: application/json' \`\
@@ -55,4 +52,4 @@ You would then use the scroll\_id for future request:\
 `"scroll_id" : "DnF1ZXJ5VGhlbkZldGNoAgAAAAAF-0fRFkhYNzFBb1loU1dLbVpicWpmSTl3b1EAAAAABftH0hZIWDcxQW9ZaFNXS21aYnFqZkk5d29R"`\
 `}'`\
 \
-And then grab the scroll\_id from that results and iterate.
+This will generate a set of results with a **new** scroll\_id. Use this new scroll\_id to generate a new request and repeat...

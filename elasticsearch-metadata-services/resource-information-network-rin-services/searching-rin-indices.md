@@ -12,26 +12,34 @@ The Resources Information Network (RIN) APIs are provided via an ElasticSearch e
 
 Access to the RIN API is provided via an Elasticsearch pass-through.
 
-{% swagger method="post" path="/elastic/v1/{index}/_search" baseUrl="https://api.scicrunch.io" summary="Elasticsearch Pass-Through" %}
-{% swagger-description %}
+## Elasticsearch Pass-Through
+
+<mark style="color:green;">`POST`</mark> `https://api.scicrunch.io/elastic/v1/{index}/_search`
+
 The pass-through is accessible at https://scicrunch.org/api/1/elastic.  Similar to standard Elasticsearch APIs you must then supply an index and an action.  In this case the index, the type and the search command (\_search).\
 \
 Documentation on the Elasticsearch Search API is available at [https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search.html](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search.html)&#x20;
-{% endswagger-description %}
 
-{% swagger-parameter in="path" name="index" required="true" %}
-Production RIN index
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="header" name="apikey" required="true" %}
-Your API key to access the services
-{% endswagger-parameter %}
+| Name                                    | Type   | Description          |
+| --------------------------------------- | ------ | -------------------- |
+| index<mark style="color:red;">\*</mark> | String | Production RIN index |
 
-{% swagger-parameter in="body" name="data" required="false" %}
-JSON query body
-{% endswagger-parameter %}
+#### Headers
 
-{% swagger-response status="200: OK" description="Successful request" %}
+| Name                                     | Type   | Description                         |
+| ---------------------------------------- | ------ | ----------------------------------- |
+| apikey<mark style="color:red;">\*</mark> | String | Your API key to access the services |
+
+#### Request Body
+
+| Name | Type   | Description     |
+| ---- | ------ | --------------- |
+| data | String | JSON query body |
+
+{% tabs %}
+{% tab title="200: OK Successful request" %}
 ```json
 {
     "took": 23,
@@ -45,27 +53,9 @@ JSON query body
     "hits": {...}
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="400: Bad Request" description="API request is malformed" %}
-```json
-{
-    "error": {
-        "root_cause": [
-            {
-                "type": "illegal_argument_exception",
-                "reason": "request [/RIN_Addgene_pr/rin/_search] contains unrecognized parameter: [api_key]"
-            }
-        ],
-        "type": "illegal_argument_exception",
-        "reason": "request [/RIN_Addgene_pr/rin/_search] contains unrecognized parameter: [api_key]"
-    },
-    "status": 400
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="No API key supplied" %}
+{% tab title="401: Unauthorized No API key supplied" %}
 ```json
 {
     "error": {
@@ -95,13 +85,27 @@ JSON query body
     "status": 401
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="403: Forbidden" description="Invalid API key" %}
+{% tab title="400: Bad Request API request is malformed" %}
+```json
+{
+    "error": {
+        "root_cause": [
+            {
+                "type": "illegal_argument_exception",
+                "reason": "request [/RIN_Addgene_pr/rin/_search] contains unrecognized parameter: [api_key]"
+            }
+        ],
+        "type": "illegal_argument_exception",
+        "reason": "request [/RIN_Addgene_pr/rin/_search] contains unrecognized parameter: [api_key]"
+    },
+    "status": 400
+}
+```
+{% endtab %}
 
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="The index or the uri is incorrect" %}
+{% tab title="404: Not Found The index or the uri is incorrect" %}
 ```json
 {
     "error": {
@@ -125,9 +129,9 @@ JSON query body
     "status": 404
 }
 ```
-{% endswagger-response %}
+{% endtab %}
 
-{% swagger-response status="500: Internal Server Error" description="The query is incorrect" %}
+{% tab title="500: Internal Server Error The query is incorrect" %}
 ```json
 {
     "error": {
@@ -143,53 +147,65 @@ JSON query body
     "status": 500
 }
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
 
-{% swagger method="get" path="/elastic/v1/{index}/_search" baseUrl="https://api.scicrunch.io" summary="Elasticsearch Pass-Through" %}
-{% swagger-description %}
+{% tab title="403: Forbidden Invalid API key" %}
+
+{% endtab %}
+{% endtabs %}
+
+## Elasticsearch Pass-Through
+
+<mark style="color:blue;">`GET`</mark> `https://api.scicrunch.io/elastic/v1/{index}/_search`
+
 The pass-through is accessible at https://scicrunch.org/api/1/elastic.  Similar to standard Elasticsearch APIs you must then supply an index and an action.  In this case the index, the type and the URL search query paramter.
 
 \
 Documentation on the Elasticsearch Search API is available at [https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search.html](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search.html)&#x20;
-{% endswagger-description %}
 
-{% swagger-parameter in="query" name="q" required="false" %}
-Search String
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="path" name="index" required="true" %}
-Production RIN index
-{% endswagger-parameter %}
+| Name                                    | Type   | Description          |
+| --------------------------------------- | ------ | -------------------- |
+| index<mark style="color:red;">\*</mark> | String | Production RIN index |
 
-{% swagger-parameter in="header" name="apikey" required="true" %}
-Your API key to access the services
-{% endswagger-parameter %}
+#### Query Parameters
 
-{% swagger-response status="200: OK" description="Successful request" %}
+| Name | Type   | Description   |
+| ---- | ------ | ------------- |
+| q    | String | Search String |
 
-{% endswagger-response %}
+#### Headers
 
-{% swagger-response status="400: Bad Request" description="API request is malformed" %}
+| Name                                     | Type   | Description                         |
+| ---------------------------------------- | ------ | ----------------------------------- |
+| apikey<mark style="color:red;">\*</mark> | String | Your API key to access the services |
 
-{% endswagger-response %}
+{% tabs %}
+{% tab title="200: OK Successful request" %}
 
-{% swagger-response status="401: Unauthorized" description="No API key supplied" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="400: Bad Request API request is malformed" %}
 
-{% swagger-response status="403: Forbidden" description="Invalid API key" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="401: Unauthorized No API key supplied" %}
 
-{% swagger-response status="404: Not Found" description="The index or the uri is incorrect" %}
+{% endtab %}
 
-{% endswagger-response %}
+{% tab title="403: Forbidden Invalid API key" %}
 
-{% swagger-response status="500: Internal Server Error" description="The query is incorrect" %}
+{% endtab %}
 
-{% endswagger-response %}
-{% endswagger %}
+{% tab title="404: Not Found The index or the uri is incorrect" %}
+
+{% endtab %}
+
+{% tab title="500: Internal Server Error The query is incorrect" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### RIN Index Aliases
 
