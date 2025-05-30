@@ -8,7 +8,7 @@ With a large number of records to download you would not be able to do that via 
 \
 To download an entire index from the API, you start the scrolling process with the following curl command:
 
-`curl --location 'https://api.scicrunch.io/elastic/v1/<<YOUR<https://api.scicrunch.io/elastic/v1/%3C%3CYOUR> TARGET INDEX>>/_search?scroll=1s' \`\
+`curl --location 'https://api.scicrunch.io/elastic/v1/<<YOUR TARGET INDEX>>/_search?scroll=1s' \`\
 `--header 'Content-Type: application/json' \`\
 `--header 'apikey: <<YOUR API KEY>>' \`\
 `--data '{ <<YOUR QUERY HERE>> }'`\
